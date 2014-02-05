@@ -1,0 +1,111 @@
+
+.comments-list {
+	position:relative;
+	z-index:90;
+
+	margin:10px 0;
+	margin-top:-15px;
+
+	background:#fafafa repeat;
+
+	.border-radius(0 0 5px 5px);
+	.box-shadow(0 0 5px 0 fade(black, 40%));
+
+	h4 {
+		padding:10px;
+		padding-bottom:5px;
+		display:block;
+	}
+
+	.commentlist {
+
+		display:none;
+		.js-active &, .no-history & { display:block;}
+
+		.comment, .pingback, & > li {
+
+			padding:10px;
+			border-top:1px solid #eee;
+
+			.comment-avatar {
+				float:left;
+				margin-right:10px;
+			}
+
+			.fn {
+				float:left;
+				padding-right:5px;
+				font-weight:bold;
+			}
+
+			.comment-text {
+				padding-bottom:10px;
+			}
+
+			.comment-meta {
+				padding:0;
+				float:right;
+				margin-top:-10px;
+				text-align:left;
+				clear:none;
+				font-size:12px;
+
+				a {
+					color:lighten(@linkColor, 10%);
+				}
+			}
+
+			&.comment {
+				.comment-meta, .comment-text {
+					margin-left:42px;
+				}
+			}
+		}
+
+	}
+}
+
+.commentform {
+	position:relative;
+	z-index:80;
+
+	margin-bottom:10px;
+	padding:5px 15px;
+	padding-top:10px;
+
+	background:url("../../img/bg.jpg") repeat;
+	.border-radius(5px);
+	.box-shadow(inset 0 0 5px 0 fade(black, 40%));
+
+	.inputs {
+		input, textarea {
+			margin:5px auto;
+			width:248px;
+			display:block;
+		}	
+	}
+
+	.submit {
+		text-align:right;		
+	}
+
+	.subscribe-to-comments {
+
+		margin-top:10px;
+		text-align:left;	
+		font-size:10px;	
+
+		input {
+			float:left;
+			margin-right:5px;
+			margin-top:2px;
+		}
+
+		label {		
+			font-size:10px;
+		}
+
+	}
+
+}
+

@@ -1,0 +1,187 @@
+
+.js-template { display: none; }
+
+.top-05 { margin-top:5px; }
+.top-10 { margin-top:10px; }
+.top-20 { margin-top:20px; }
+.top-30 { margin-top:30px; }
+.top-40 { margin-top:40px; }
+.top-50 { margin-top:50px; }
+.top-60 { margin-top:60px; }
+.top-70 { margin-top:70px; }
+.top-80 { margin-top:80px; }
+.top-90 { margin-top:90px; }
+.top-100 { margin-top:100px; }
+
+.bottom-05 { margin-bottom:5px; }
+.bottom-10 { margin-bottom:10px; }
+.bottom-20 { margin-bottom:20px; }
+.bottom-30 { margin-bottom:30px; }
+.bottom-40 { margin-bottom:40px; }
+.bottom-50 { margin-bottom:50px; }
+.bottom-60 { margin-bottom:60px; }
+.bottom-70 { margin-bottom:70px; }
+.bottom-80 { margin-bottom:80px; }
+.bottom-90 { margin-bottom:90px; }
+.bottom-100 { margin-bottom:100px; }
+
+.left-05 { margin-left:5px; }
+.left-10 { margin-left:10px; }
+.left-20 { margin-left:20px; }
+.left-30 { margin-left:30px; }
+.left-40 { margin-left:40px; }
+.left-50 { margin-left:50px; }
+.left-60 { margin-left:60px; }
+.left-70 { margin-left:70px; }
+.left-80 { margin-left:80px; }
+.left-90 { margin-left:90px; }
+.left-100 { margin-left:100px; }
+
+.right-05 { margin-right:5px; }
+.right-10 { margin-right:10px; }
+.right-20 { margin-right:20px; }
+.right-30 { margin-right:30px; }
+.right-40 { margin-right:40px; }
+.right-50 { margin-right:50px; }
+.right-60 { margin-right:60px; }
+.right-70 { margin-right:70px; }
+.right-80 { margin-right:80px; }
+.right-90 { margin-right:90px; }
+.right-100 { margin-right:100px; }
+
+.shadow-large {
+
+	position:relative;
+
+	&:after, &:before {
+		content:"";
+		position:absolute;
+		z-index:-1;
+		bottom:5px;
+
+		width:50%;
+		height:0px;
+		.box-shadow(0 0 10px 5px fade(#000, 40%) );
+	}
+
+	&:after {
+		left:20px;
+		.rotate(-8deg);
+	}
+
+	&:before {
+		right:20px;
+		.rotate(8deg);
+	}
+
+}
+
+hr.soften {
+	position:relative;
+  height: 1px;
+  margin: 40px 0;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  border: 0;
+
+  &:after {
+  	content:"";    	
+
+  	position:absolute;
+  	left:0;
+  	bottom:-1px;
+
+  	display: block;
+	  background-image: -webkit-linear-gradient(left, fade(white,0%), fade(white,100%), fade(white,0%));
+	  background-image:    -moz-linear-gradient(left, fade(white,0%), fade(white,100%), fade(white,0%));
+	  background-image:     -ms-linear-gradient(left, fade(white,0%), fade(white,100%), fade(white,0%));
+	  background-image:      -o-linear-gradient(left, fade(white,0%), fade(white,100%), fade(white,0%));
+  	height: 1px;
+  	width:100%;
+  }
+}
+
+// Transformation
+.transform(@transform) {
+  -webkit-transform: @transform;
+     -moz-transform: @transform;
+      -ms-transform: @transform;
+       -o-transform: @transform;
+          transform: @transform;
+}
+
+.animation(@animation) {
+  -webkit-animation: @animation;
+     -moz-animation: @animation;
+      -ms-animation: @animation;
+       -o-animation: @animation;
+          animation: @animation;
+}
+
+
+// Webkit
+@-webkit-keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+// Firefox
+@-moz-keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+// IE9
+@-ms-keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+// Opera
+@-o-keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+// Spec
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.js-loading-overlay {
+	position:absolute;
+	top:0; bottom:0;
+	left:0; right:0;
+
+	height:100%;
+	width:100%;
+
+	background:url("../../img/loading.gif") center center no-repeat #fff;
+	.opacity(40);
+
+	display:block;	
+	z-index:199;
+
+	border-radius: inherit;
+
+  &.black {
+		background:url("../../img/loading-black.gif") center center no-repeat #000;
+		.opacity(40);
+  }
+
+	&.transparent {
+		background-color:transparent;
+  }
+}
+
+
+.thumbnail {
+  background:fade(white, 30%);
+  border: 1px solid #CCCCCC;
+  box-shadow: 0 1px 4px rgba(105, 105, 105, 0.25);  
+  max-width: 100%;
+  padding: 2px;
+}

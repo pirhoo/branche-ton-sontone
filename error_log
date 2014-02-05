@@ -1,0 +1,1 @@
+[16-Nov-2013 04:52:07 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/branchet/public_html/wp-content/themes/New Matilda/index.php on line 1

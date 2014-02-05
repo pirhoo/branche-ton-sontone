@@ -1,0 +1,2 @@
+recess less/global.less --compress > css/global.css
+recess less/global.less:css/global.css --compress --watch ./less

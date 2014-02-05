@@ -1,0 +1,36 @@
+.p404 {
+ 
+    position:relative;
+    
+    &:after {
+        position:absolute;
+        z-index:10;
+        top:150px;
+        left:0;
+        
+        font-size:360px;
+        height:360px;
+        width:590px;
+        content:"404";
+        color:white;
+        .opacity(20)
+    }
+    
+    .p404-overlay {
+        position:absolute;
+        z-index:20;
+        bottom:60px;
+        left:30px;
+        font-size:16px;
+        
+        h2, a, p {            
+            color:white;
+            text-shadow:0 0 10px black;
+        }
+
+        a {
+            font-weight:bold;
+        }
+
+    }   
+}

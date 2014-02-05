@@ -1,0 +1,37 @@
+
+footer {
+	opacity:0.7;
+	clear:both;
+	padding:30px;
+	margin-top:1px;
+
+	background-color:fade(@white, 30%);
+	border-top:fade(white, 80%) 1px solid;
+	.box-shadow(0 -1px 0 0 rgba(0,0,0,.1) );
+	.transition(opacity 0.7s);
+
+	&:hover {
+		opacity:1;
+	}
+
+	&, input, button {
+		font-size:11px !important;
+	}
+
+
+	h3 {
+		font-family: @baseFontFamily;
+		font-size:12px;
+		font-weight:bold;
+		margin-bottom:10px;
+		color:#666666;
+	}
+
+	li {
+		margin-bottom:5px;
+	}
+
+	a {
+		color:#999999;
+	}
+}

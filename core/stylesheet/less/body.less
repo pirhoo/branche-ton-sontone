@@ -1,0 +1,287 @@
+
+html.js,
+html.no-js {
+	margin-top:0 !important;	
+}
+
+body {
+	padding-top:30px;
+	background:url("../../img/bg.jpg") silver repeat;
+	text-shadow:1px 1px 0 white;		
+}
+
+#content {	
+	background:url("../../img/bg-white.jpg") white repeat;
+	border-top:fade(white, 80%) 1px solid;
+	position:relative;
+	top:0; left:0;
+	z-index:500;
+
+	overflow:hidden;
+	width:100%;
+	
+	.box-shadow(0 -1px 0 0 rgba(0,0,0,.1) );	
+	
+	.no-history & {
+		overflow:visible;
+	}
+
+	.instagram {
+		
+		.pic {
+			position:relative;
+			
+			.caption {
+				position:absolute;
+				bottom:3px;
+				left:3px;
+				right:-2px;
+				padding:10px;
+				color:white;				
+				text-shadow:0 0 10px black;
+				.transition(0.6s);
+				@startColor:fade(black, 0%);
+				@endColor:fade(black, 100%);
+			    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+			    background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+			    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+			    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+			    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+			}
+
+			&:hover {
+				.caption {	
+					text-decoration:none;								
+					.opacity(0);
+				}
+			}
+		}
+	}
+
+	
+}
+
+.no-history .js-navigation {
+	display:block;	
+}
+
+.js-navigation {
+	display:none;	
+
+	.previous, .next {		
+		position:absolute;
+		top:300px;
+		display:block;
+		text-align:center;
+		margin:0 20px;
+		
+		&.previous {
+			left:110%;
+			margin-left:-40px;
+		}
+
+		&.next {
+			right:110%;
+		}
+	}
+
+	a {
+		display:block;
+		background:@red;
+		padding:10px;
+		width:180px;
+		color:white;
+		text-shadow:none;
+	}
+
+	.history & {
+
+		a {						
+			display:block;
+			height:40px;
+			width:40px;
+			overflow:hidden;
+			color:transparent;
+			background:transparent;
+			position:relative;
+			
+			&:after {
+			}
+		}
+
+	}
+}
+
+#pageCenter {
+	width:690px;
+	margin:auto;
+	position:relative;
+
+	&:after, &:before {
+		content:"";
+		position:absolute;
+		top:0;
+		bottom:0;
+		width:99999px;
+		background:url("../../img/bg.jpg") repeat;	
+		border-right:1px solid fade(#000, 10%);
+		border-left:1px solid fade(#000, 10%);	
+		.box-shadow(0 0 0 1px white);
+	}
+
+	&:after {
+		left:100%;
+		margin-left:1px;
+	}
+
+	&:before {
+		right:100%;
+		margin-right:1px;
+	}
+}
+
+#pageSlide {	
+
+	padding-bottom:100px;
+	min-height:400px;
+	visibility: hidden;
+	overflow:visible;
+
+	&.js-ready { visibility: visible; }
+
+
+	.no-history & {
+		width:590px;		
+		margin:auto;	
+		overflow: visible;		
+	}
+
+	.no-history & .js-wrapper {
+		margin:0;
+		overflow:visible;
+		
+		.js-card:after { display:none; }
+	}
+
+	.js-card {
+
+		min-height:1px;
+		position:relative;
+		z-index:50;
+
+		list-style:none;
+		padding:0;
+		margin:0;
+		float:left;	
+	
+		cursor:pointer;
+		.opacity(42);
+		
+		.offset {
+			margin:auto;
+			width:590px;
+		}
+		
+		&.js-active {
+			
+			.opacity(100);
+
+			.post-title {
+				&:after, &:before {
+					display:none;
+				}
+			}	
+		}
+
+		.history & .post-title {
+			position:static;
+		}		
+		
+		.no-history & {
+			padding-right:0;
+			overflow:visible;
+		}
+
+		&.js-active, .no-history & {
+			z-index:40;
+			cursor:default;
+			
+			&:after {
+				display:none;
+			}
+		}
+
+
+		&:after {
+			content:"";
+			cursor:pointer;
+			display:block;
+
+			z-index:100;
+			position:absolute;
+			top:0; 
+			left:-10px;
+			right:-10px;
+
+			width:100%;
+			height:10000px;
+			cursor:pointer;			
+			.opacity(0);
+		}
+
+	}
+
+}
+
+
+#main-nav-buttons {
+
+	.touch & { display:none; }
+
+	li {
+
+		z-index:600;
+		list-style: none;
+		position:fixed;
+		top:50%;
+
+		height:40px;
+		width:40px;
+		margin-top:-20px;
+
+		&.previous { left:10px; }
+		&.next { right:10px; }
+
+		cursor:pointer;
+		background:transparent;
+		border:1px solid #000;
+		.border-radius(3px);
+		.opacity(20);
+		.transition(0.1s);
+		.box-shadow(inset 0 1px 0 0 white);
+
+		&:after {
+			content:"";
+			position:absolute;
+			top:0; 
+			left:0;
+			right:0;
+			text-align: center;
+			vertical-align: center;
+			color:#000;		
+			line-height:40px;
+			font-size:10px;
+			text-shadow:1px 1px 0 white;
+			overflow:hidden;
+		}
+
+		&.previous:after { content:"◀"; }
+		&.next:after { content:"▶"; }
+
+		&:hover, &.js-active {
+			.opacity(100);
+			.transition(0s);
+		}
+
+	}
+}

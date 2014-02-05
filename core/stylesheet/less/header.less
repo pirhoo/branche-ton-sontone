@@ -1,0 +1,296 @@
+
+.top-banner {
+	position:absolute;
+	z-index:1000;	
+	top:0;
+	left:0;
+	right:0;
+	overflow:hidden;
+	height:210px;
+
+	.overflow {
+		overflow:hidden;
+	}
+
+	.fixed-nav & {
+		position:fixed;
+		top:-170px;
+	}
+	
+	img {
+		width:1600px;
+		height:400px;
+		min-height:auto;
+		max-height:none !important;
+		min-width:auto;
+		max-width:none  !important;
+		position:absolute;
+		top:0;
+		left:50%;
+		margin-left:1600px/-2px;
+	}
+}
+
+header {
+	height:180px;
+	padding-left:100px;
+	width:490px !important;
+	position:relative;
+	z-index:20;
+	color:white;
+	font-size:14px;
+	text-shadow:0 0 10px black;
+	position:relative;
+	z-index:1010;	
+
+	h1 {		
+		font-family:"Bemio", sans-serif;
+		font-weight:normal;
+		color:white;
+    text-shadow:0 0 10px black;
+	}
+
+	.logo {
+		width:150px;
+		position:absolute;
+		bottom:30px;
+		left:-20px;
+	}
+}
+
+.main-nav {
+	position: absolute;
+	z-index:1020;
+
+	top:170px;
+	left:0;
+	right:0;
+	
+	color:@white;
+	background:fade(#000, 0);
+	.transition(background 2s);
+	.box-shadow(0 1px 0 0 fade(@white, 30));
+
+	.wrapper {
+		background:fade(@white, 40);
+		position:relative;
+		width:690px;
+		height:40px;
+		margin:auto;
+		.transition(background 2s);
+	}
+
+	.fixed-nav & {
+		top:0;
+		position:fixed;		
+		background:fade(#000, 30);
+
+		.wrapper {
+			background:fade(#000, 30);
+		}
+	}
+
+	.link {		
+		font-family:"Bemio", sans-serif;
+		font-weight:100;
+		padding:5px 10px;
+		margin:0;
+		height:30px;
+		line-height:35px;
+		display:inline-block;
+		color:inherit;
+		text-shadow:none;
+		cursor:pointer;
+		float:left;
+
+		&:hover{
+			text-decoration: none;
+		}
+		
+		&.hp {
+			padding:5px 15px;
+		}
+
+		&.active {
+			border-bottom:2px solid @white;
+			padding-bottom:3px !important;
+		}		
+
+		[class^=icon-]{
+			position:relative;
+			top:-2px;
+		}
+	}
+
+	.slider-nav {
+		position:absolute;
+		left:0;
+		right:0;
+		top:0;
+
+		.previous, .next {	
+			position:absolute;
+			top:0;
+			white-space: nowrap;
+			padding:5px 20px;
+			&.hidden {
+				display:none;
+			}
+		}
+		
+		.previous {			
+			right:100%;
+			margin-right:1px;
+		}
+
+		.next {			
+			left:100%;
+		}
+	}
+
+}
+
+#interspace {
+
+	clear:both;
+	overflow:hidden;
+	.transition(0.4s);
+
+	position:relative;
+	z-index:15;
+	min-height:220px;
+	max-height:290px;
+	background:url("../../img/bg-dark.jpg") repeat;
+
+	&:before, &:after {
+
+		content:"";
+
+		width:120%;
+		position: absolute;
+		left:-10%;
+	
+	}
+
+	&:before {
+		border-top:1px solid fade(white, 20);
+		height:20px;
+		top:0;
+		.box-shadow(inset 0 10px 10px 0 rgba(0,0,0,0.4) );
+	}
+
+	&:after {
+		height:20px;
+		bottom:0;
+		.box-shadow(inset 0 -10px 10px 0 rgba(0,0,0,0.2) );
+	}
+
+	&.hide {
+		display:block;
+		max-height:0px;
+		min-height:0px;
+	}	
+
+	.wrapper {		
+		display:block;
+		margin:auto;
+		max-width:100%;
+	}
+
+	.previous-page, .next-page {
+		position:absolute;
+		top:90px;
+		width:50px;
+		height:48px;
+		background: no-repeat;
+		display:block;
+		cursor:pointer;
+		.opacity(90);
+	}
+
+	.next-page {
+		right:30px;
+		background-image: url("../../img/play-next.png");
+	}
+
+	.previous-page {
+		left:30px;
+		background-image: url("../../img/play-previous.png");
+	}
+
+	&.first .previous-page { display:none; }
+	&.last  .next-page { display:none; }
+
+	.js-card {
+		display:block;
+		padding-top:30px;
+		padding-bottom:10px;
+		height:220px;
+		color:white;
+		text-shadow:1px 1px 5px black !important;
+		text-align:left;
+		width:140px;
+		float:left;
+		margin:0 10px;
+		.transition(0.4s);		
+
+		.cover {
+
+			position:relative;
+			.border-radius(5px);
+			margin-bottom:10px;
+			background: #000;
+
+			&:after {
+				content:"";
+				z-index:15;
+				position:absolute;
+				top:0;
+				left:0;
+				width:139px;
+				height:100%;
+				.box-shadow(~"0 1px 0 0 fade(white, 30%) inset, 0 1px 3px 0 rgba(0, 0, 0, 0.6)");
+				.border-radius(5px);
+			}
+
+			img {
+				position:relative;
+				z-index:10;
+				background:white;
+				width:140px;
+				height:140px;
+
+				border:0;
+				.border-radius(5px);
+			}
+
+		}
+
+	}
+
+	.js-card:hover {
+		text-decoration:none;
+		.transform( translateY(-5px) scale(1.1) );		
+	}
+
+}
+
+.keyboard-tips {
+
+	.touch & { display:none; }
+
+	font-size:12px;
+	line-height:14px;
+	position:absolute;
+	right:10px;
+	top:160px;
+	text-align:left;
+	width:200px;
+	padding-left:40px;
+	background:url("../../img/key-arrows.png?") left center no-repeat;
+	.animation(fadeOut 20s linear forwards 0.4s);
+
+	header:hover & {
+		.animation(none);
+	}
+}
