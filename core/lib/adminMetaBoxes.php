@@ -297,5 +297,3 @@ function bts_save_postdata($post_id) {
 
     return $post_id;
 }
-
-?>

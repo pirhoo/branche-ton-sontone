@@ -333,10 +333,7 @@
 
         <?php if( ! is_page() ) : ?>
 
-          <abbr title="<?php the_time('l j F Y') ?> à <?php the_time() ?>">
-            <?php echo get_pretty_date(); ?>
-          </abbr>
-            dans <span class="categories"><?php the_category(', ') ?></span>
+            Dans <span class="categories"><?php the_category(', ') ?></span>
             par <?php the_author_posts_link(); ?>
 
 
